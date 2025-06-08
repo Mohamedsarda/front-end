@@ -2,15 +2,15 @@ import { useState } from 'react'
 import Image from 'next/image'
 //
 import { SkipTopContent } from './Skip'
+import { useSkipStore } from '../zustand/useSkipStore'
 
-const OneSkip = ({ data, setSelectedSkipData }) => {
-  const [isHover, setIsHover] = useState(false)
-
+const OneSkip = () => {
+  const { setSelectedSkip, selectedSkip } = useSkipStore()
   return (
     <div className="relative w-full rounded-3xl bg-skipBg border border-gray-500  overflow-hidden transition-all duration-500  shadow-lg cursor-pointer hover:shadow-2xl">
       {/* Image */}
       <Image
-        src={`https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/${data.size}-yarder-skip.jpg`}
+        src={`https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/${selectedSkip.size}-yarder-skip.jpg`}
         alt="Skip"
         width={1000}
         height={1000}
@@ -19,7 +19,7 @@ const OneSkip = ({ data, setSelectedSkipData }) => {
 
       {/* skip content */}
       <div className={`duration-300 h-[50%] flex flex-col justify-between`}>
-        <SkipTopContent data={data} />
+        <SkipTopContent data={selectedSkip} />
         <p className="px-4 mb-4">
           Imagery and information shown throughout this website may not reflect
           the exact shape or size specification, colours may vary, options
@@ -28,7 +28,7 @@ const OneSkip = ({ data, setSelectedSkipData }) => {
         {/* buttons */}
         <div className="flex items-center justify-center mb-4 gap-4">
           <button
-            onClick={() => setSelectedSkipData(null)}
+            onClick={() => setSelectedSkip(null)}
             className="px-5 py-2 bg-[crimson] rounded-2xl text-xl cursor-pointer hover:scale-105 duration-500 shadow-2xl"
           >
             Back
@@ -45,11 +45,11 @@ const OneSkip = ({ data, setSelectedSkipData }) => {
   )
 }
 
-const SelectedSkip = ({ data, setSelectedSkipData }) => {
+const SelectedSkip = () => {
   return (
     <div className="z-10 left-0 top-0 w-full h-[100dvh] fixed backdrop-blur-md flex items-center justify-center">
       <div className="w-[700px] p-10 animate-in slide-in-from-bottom-40 duration-700 ease-out">
-        <OneSkip data={data} setSelectedSkipData={setSelectedSkipData} />
+        <OneSkip />
       </div>
     </div>
   )

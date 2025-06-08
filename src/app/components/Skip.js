@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
+import { useSkipStore } from '../zustand/useSkipStore'
 //
 
 const Allowed = ({ isAllowed, text }) => {
@@ -48,11 +49,13 @@ export const SkipTopContent = ({ data }) => {
   )
 }
 
-const Skip = ({ data, setSelectedSkipData }) => {
+const Skip = ({ data }) => {
   const [isHover, setIsHover] = useState(false)
+  const { setSelectedSkip } = useSkipStore()
 
   return (
     <div
+      key={data.id}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       className="relative w-full h-[500px] rounded-3xl bg-skipBg border border-gray-500 hover:border-blue-400 hover:scale-101 overflow-hidden transition-all duration-500  shadow-lg cursor-pointer hover:shadow-2xl"
@@ -77,7 +80,7 @@ const Skip = ({ data, setSelectedSkipData }) => {
         <SkipTopContent data={data} />
         {/* button */}
         <button
-          onClick={() => setSelectedSkipData(data)}
+          onClick={() => setSelectedSkip(data)}
           className={`py-3 m-4 cursor-pointer rounded-xl font-semibold transition-all duration-500 transform bg-gradient-to-r bg-blue-400 hover:bg-blue-600 shadow-lg shadow-white-500/25  text-white hover:shadow-xl`}
         >
           <span className="flex items-center justify-center space-x-2">
