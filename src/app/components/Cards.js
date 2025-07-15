@@ -63,13 +63,13 @@ const Cards = () => {
       </header>
       <div className="w-full xl:px-10 xl:py-4 p-4 grid gap-6 grid-cols-[repeat(auto-fit,_minmax(350px,1fr))]">
         {isLoading ? (
-          Array(4)
+          Array(6)
             .fill()
             .map((_, i) => (
               <Skeleton
                 key={i}
-                count={5}
-                height={400}
+                count={3}
+                height={350}
                 baseColor="#222"
                 highlightColor="#111"
               />
