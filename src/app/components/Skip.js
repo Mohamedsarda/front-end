@@ -62,7 +62,7 @@ const Skip = ({ data }) => {
     >
       {/* Image */}
       <Image
-        src={`https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/${data.size}-yarder-skip.jpg`}
+        src={`https://images.pexels.com/photos/27167243/pexels-photo-27167243.jpeg`}
         alt="Skip"
         width={1000}
         height={1000}

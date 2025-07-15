@@ -10,7 +10,7 @@ const OneSkip = () => {
     <div className="relative w-full rounded-3xl bg-skipBg border border-gray-500  overflow-hidden transition-all duration-500  shadow-lg cursor-pointer hover:shadow-2xl">
       {/* Image */}
       <Image
-        src={`https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/${selectedSkip.size}-yarder-skip.jpg`}
+        src={`https://images.pexels.com/photos/27167243/pexels-photo-27167243.jpeg`}
         alt="Skip"
         width={1000}
         height={1000}

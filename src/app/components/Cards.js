@@ -61,7 +61,7 @@ const Cards = () => {
           Heavy Waste
         </button>
       </header>
-      <div className="w-full h-full xl:px-10 xl:py-4 p-4 grid gap-6 grid-cols-[repeat(auto-fit,_minmax(350px,1fr))]">
+      <div className="w-full xl:px-10 xl:py-4 p-4 grid gap-6 grid-cols-[repeat(auto-fit,_minmax(350px,1fr))]">
         {isLoading ? (
           Array(4)
             .fill()
